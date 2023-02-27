@@ -12,18 +12,15 @@ import subprocess
 class appmint:
  def __init__(self):
   
-  # Cria janela principal
+  
   self.janela_principal = Tk()
 
-  # titulo e tamanho janela principal
   self.janela_principal.title('Padronização de SO - CBMPR')
   self.janela_principal.geometry("550x250")
   
-  # Cria dois frames
   self.frame_up = Frame(self.janela_principal)
   self.frame_bot = Frame(self.janela_principal)
   
-  # Objetos IntVar dos botões
   self.checkvar1 = IntVar()
   self.checkvar2 = IntVar()
   self.checkvar3 = IntVar()
@@ -31,7 +28,6 @@ class appmint:
   self.checkvar5 = IntVar()
   self.checkvar6 = IntVar()
   
-  # Setando valor 0 para aparecem desmarcados
   self.checkvar1.set(0)
   self.checkvar2.set(0)
   self.checkvar3.set(0)
@@ -39,7 +35,6 @@ class appmint:
   self.checkvar5.set(0)
   self.checkvar6.set(0)
   
-  # Criando os check buttons e o label
   self.label = Label(self.frame_up, text='Sistema de automatização de tarefas, selecione as opções que deseja executar: ')
   self.checkbutton1 = Checkbutton(self.frame_up, text='Atualizar Computador', \
        variable = self.checkvar1)
@@ -54,7 +49,6 @@ class appmint:
   self.checkbutton6 = Checkbutton(self.frame_up, text='Alterar senha VNC', \
        variable = self.checkvar6)
   
-  # Empacotando o label e os check buttons
   self.label.pack(anchor = 'w')
   self.checkbutton1.pack(anchor = 'w')
   self.checkbutton2.pack(anchor = 'w')
@@ -63,15 +57,12 @@ class appmint:
   self.checkbutton5.pack(anchor = 'w')
   self.checkbutton6.pack(anchor = 'w')
   
-  # Criando os botões
-  self.botao = Button(self.frame_bot, text='Executar',command=self.exibe)
+  self.botao = Button(self.frame_bot, text='Executar',command=self.executa)
   self.botao_sair = Button(self.frame_bot, text='Sair',command=self.janela_principal.quit)
             
-  # Empacotando os botões
   self.botao.pack(side='left')
   self.botao_sair.pack(side='left')
   
-  # Empacotando os frames na janela principal
   self.frame_up.pack()
   self.frame_bot.pack()
 
@@ -81,11 +72,9 @@ class appmint:
   
   #self.progressbar.pack ()
 
-
-  # Rodando
   mainloop()
   
- def exibe(self):
+ def executa(self):
    self.texto = 'Modulo(s) Atualizados! \n'
    if self.checkvar1.get() == 1:
     #self.texto += 'Sistema Atualizado\n'
