@@ -12,7 +12,6 @@ import subprocess
 class appmint:
  def __init__(self):
   
-  
   self.janela_principal = Tk()
 
   self.janela_principal.title('Padronização de SO - CBMPR')
